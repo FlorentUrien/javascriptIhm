@@ -2,11 +2,13 @@ import pyvista
 from fastapi import FastAPI
 from starlette.responses import FileResponse
 import os
+import time
 
 app = FastAPI()
+frame = 0
 
 
-def convertit_xmdf():
+def convertit_png():
     for i in range(0, 120):
         no = "{:04}".format(i)
         filemesh = os.path.join("xdmf", "extract_" + no + "_tempo.xdmf")
@@ -16,11 +18,19 @@ def convertit_xmdf():
         mesh.plot(off_screen=True, window_size=(600, 600), screenshot=fileimage)
 
 
-app = FastAPI()
-#convertit_xmdf()
+def convertit_html(nb: int):
+    pl = pyvista.Plotter(window_size=(600, 600))
+
+    no = "{:04}".format(nb)
+    filemesh = os.path.join("xdmf", "extract_" + no + "_tempo.xdmf")
+    fileimage = os.path.join("html", "extract_" + no + "_tempo.html")
+    print(filemesh)
+    mesh = pyvista.read(filemesh)
+    pl.add_mesh(mesh)
+    pl.export_html(fileimage)
 
 
-# mesh.plot(off_screen=True, window_size=(600, 600), screenshot=filepath)
+# convertit_xmdf()
 
 
 @app.get("/")
@@ -48,7 +58,11 @@ def get_image():
             Local path within the static directory of the image.
 
         """
-    return FileResponse(os.path.join('images', 'extract_0012_tempo.png'))
+    global frame
+    convertit_html(frame)
+    fileimage = os.path.join("html", "extract_" + frame + "_tempo.html")
+    frame += 1
+    return FileResponse(fileimage)
 
 
 @app.get("/favicon.ico")
