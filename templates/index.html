@@ -30,7 +30,7 @@
         <output>3.00</output>
     </div>
     <div align="center">
-        <button id="calculs" onclick="openCalculs()" class="gros-button">
+        <button id="calculs" onclick="onCalcul()" class="gros-button">
             <span class="round-button-content">Concentration en polluants</span>
         </button>
     </div>
@@ -70,26 +70,7 @@
             <span class="round-button-content">Go</span>
         </button>
     </div>
-    <script>
-        function openCalculs() {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "html");
-            xhr.send();
-            xhr.responseType = "json";
-            xhr.onload = () => {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    const data = xhr.response;
-                    console.log(data);
-                    window.open(params, "_self");
-                } else {
-                    console.log(`Error: ${xhr.status}`);
-                }
-            };
-        }
-    </script>
 </head>
-
 <body>
 </body>
-
 </html>
