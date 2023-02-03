@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>miniReddis</title>
@@ -10,22 +11,22 @@
     <div align="center">
         <label for="slider1">&#956;1</label>
         <input id="slider1" type="range" value="2" min="0" max="5" step="0.05"
-               title="Amplitude générale du champ vitesse"
-               oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
+            title="Amplitude générale du champ vitesse"
+            oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
         <output>2.00</output>
     </div>
     <div align="center">
         <label for="slider2">&#956;2</label>
         <input id="slider2" type="range" value="0.5" min="0.2" max="1" step="0.008"
-               title="Amplitude de l'interface oscillante"
-               oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
+            title="Amplitude de l'interface oscillante"
+            oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
         <output>0.50</output>
     </div>
     <div align="center">
         <label for="slider3">&#956;3</label>
         <input id="slider3" type="range" value="3" min="1" max="5" step="0.04"
-               title="Temps où la source polluante cesse d'émettre"
-               oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
+            title="Temps où la source polluante cesse d'émettre"
+            oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
         <output>3.00</output>
     </div>
     <div align="center">
@@ -33,15 +34,32 @@
             <span class="round-button-content">Concentration en polluants</span>
         </button>
     </div>
-    <div align="center">
-        <iframe src="" height="600" width="600" title="PyVista" id="myimg" frameBorder="0" allowtransparency=yes
-                scrolling=no>
-            <p>Your browser does not support iframes.</p>
-        </iframe>
+    <div class="images_conteneur">
+        <div class="layer1">
+            <div align="center">
+                <iframe src="" id="myimg1" allowtransparency="yes" scrolling="no"
+                    style="background-color: rgb(76, 76, 76); display: none;" width="600" height="600" frameborder="0">
+                </iframe>
+            </div>
+        </div>
+        <div class="layer2">
+            <div align="center">
+                <iframe src="" id="myimg2" allowtransparency="yes" scrolling="no"
+                    style="background-color: rgb(76, 76, 76); display: block;" width="600" height="600" frameborder="0">
+                </iframe>
+            </div>
+        </div>
+        <div class="layer3">
+            <div align="center">
+                <iframe src="" id="myimg3" allowtransparency="yes" scrolling="no"
+                    style="background-color: rgb(76, 76, 76); display: none;" width="600" height="600" frameborder="0">
+                </iframe>
+            </div>
+        </div>
     </div>
     <div align="center">
         <input id="slider4" type="range" value="0" min="0" max="6" step="0.05" title="Avancement de la simulation"
-               oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
+            oninput="this.nextElementSibling.value = Number.parseFloat(this.value).toFixed(2)">
         <output>0.00</output>
     </div>
     <div align="center">
@@ -53,7 +71,7 @@
         </button>
     </div>
     <script>
-        function openCalculs(){
+        function openCalculs() {
             const xhr = new XMLHttpRequest();
             xhr.open("GET", "html");
             xhr.send();
@@ -70,6 +88,8 @@
         }
     </script>
 </head>
+
 <body>
 </body>
+
 </html>

@@ -3,23 +3,34 @@
 }
 
 input {
-    width: 80%;
+  width: 80%;
 }
 
 .round-button {
-  background-color: #4CAF50; /* Couleur de fond */
-  border: none; /* Enlevez les bordures */
-  color: white; /* Couleur du texte */
-  padding: 15px 32px; /* Espacement interne */
-  text-align: center; /* Alignement du texte */
-  text-decoration: none; /* Enlevez la décoration de texte */
-  display: inline-block; /* Affichage en ligne */
-  font-size: 26px; /* Taille de police */
-  margin: 4px 2px; /* Espacement externe */
-  border-radius: 50%; /* Forme ronde */
+  background-color: #4CAF50;
+  /* Couleur de fond */
+  border: none;
+  /* Enlevez les bordures */
+  color: white;
+  /* Couleur du texte */
+  padding: 15px 32px;
+  /* Espacement interne */
+  text-align: center;
+  /* Alignement du texte */
+  text-decoration: none;
+  /* Enlevez la décoration de texte */
+  display: inline-block;
+  /* Affichage en ligne */
+  font-size: 26px;
+  /* Taille de police */
+  margin: 4px 2px;
+  /* Espacement externe */
+  border-radius: 50%;
+  /* Forme ronde */
 }
+
 .round-button:first-child {
-    margin-right: 200px;
+  margin-right: 200px;
 }
 
 /* Contenu du bouton */
@@ -30,27 +41,43 @@ input {
 }
 
 .gros-button {
-  background-color: #4CAF50; /* Couleur de fond */
-  border: none; /* Enlevez les bordures */
-  color: white; /* Couleur du texte */
-  padding: 15px 32px; /* Espacement interne */
-  text-align: center; /* Alignement du texte */
-  text-decoration: none; /* Enlevez la décoration de texte */
-  display: inline-block; /* Affichage en ligne */
-  font-size: 26px; /* Taille de police */
-  margin: 4px 2px; /* Espacement externe */
-  border-radius: 20%; /* Forme ronde */
+  background-color: #4CAF50;
+  /* Couleur de fond */
+  border: none;
+  /* Enlevez les bordures */
+  color: white;
+  /* Couleur du texte */
+  padding: 15px 32px;
+  /* Espacement interne */
+  text-align: center;
+  /* Alignement du texte */
+  text-decoration: none;
+  /* Enlevez la décoration de texte */
+  display: inline-block;
+  /* Affichage en ligne */
+  font-size: 26px;
+  /* Taille de police */
+  margin: 4px 2px;
+  /* Espacement externe */
+  border-radius: 20%;
+  /* Forme ronde */
 }
 
 #stop {
-    background-color: red;
+  background-color: red;
 }
 
 button:disabled {
-    opacity: 0.1;
+  opacity: 0.1;
 }
 
+.images_conteneur {
+  display: grid;
+}
 
-
-
-
+.layer1,
+.layer2,
+.layer3 {
+  grid-column: 1;
+  grid-row: 1;
+}
