@@ -68,3 +68,9 @@ def get_image():
 @app.get("/favicon.ico")
 def get_icone():
     return FileResponse(os.path.join('templates', 'favicon.ico'))
+
+@app.get("/frame")
+def get_frame(no: int):
+    fileimage = os.path.join("html", "extract_" + str(no).zfill(4) + "_tempo.html")
+    print(fileimage)
+    return FileResponse(fileimage)

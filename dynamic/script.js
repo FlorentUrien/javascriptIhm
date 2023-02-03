@@ -107,7 +107,7 @@ function animation2() {
 }
 
 function animation3() {
-    console.log("animation3()");
+    console.log("animation3(50)");
 
     for (let i = 0; i <= 50; i++) {
         setTimeout(() => {
@@ -136,7 +136,7 @@ function animation3() {
                     document.getElementById("myimg3").style.display = 'none';
                     break;
             }
-        }, 400 * i);
+        }, 1000 * i);
     }
 }
 
